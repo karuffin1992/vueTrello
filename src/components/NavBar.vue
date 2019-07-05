@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
-        <b-navbar-brand href="#" class="ml-auto" not:is-nav>Vue | Trello</b-navbar-brand>
+        <b-navbar-brand href="#">Vue | Trello</b-navbar-brand>
         
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -18,8 +18,9 @@
             <b-navbar-nav class="ml-auto">                
                 <b-nav-item-dropdown no-caret right>
                     <template slot="button-content">
-                        <b-button>+</b-button>
-                    </template>
+                        <b-button class="showMain">+</b-button>
+                        <b-button class="showSub">Create...</b-button>
+                    </template>                    
                     <b-dropdown-item href="#">Create Board...</b-dropdown-item>      
                     <b-dropdown-divider></b-dropdown-divider>              
                     <b-dropdown-item href="#">Create Team...</b-dropdown-item>  
@@ -27,8 +28,9 @@
                     <b-dropdown-item href="#">Create Business Team...</b-dropdown-item>                    
                 </b-nav-item-dropdown>
                 <b-nav-item-dropdown no-caret right>
-                    <template slot="button-content">
-                        <b-button pill>{{ getInitials }}</b-button>
+                    <template  slot="button-content">
+                        <b-button class="showMain" pill>{{ getInitials }}</b-button>
+                        <b-button class="showSub">My Profile...</b-button>
                     </template>
                     <b-dropdown-item href="#">{{ getFullName }} (@{{ username }})</b-dropdown-item>    
                     <b-dropdown-divider></b-dropdown-divider>                
@@ -52,9 +54,9 @@
 export default {
   name: 'NavBar',
   props: {
-        firstName: String,
-        lastName: String,
-        username: String
+    firstName: String,
+    lastName: String,
+    username: String
   },
   computed: {
     getFullName: function() {
@@ -63,10 +65,26 @@ export default {
     getInitials: function() {
         return this.firstName.charAt(0).toUpperCase() + this.lastName.charAt(0).toUpperCase() 
     }
-  }  
+  }
 }
 </script>
 
 <style scoped>
+@media (min-width: 992px) { 
+    .showMain {
+        display: unset !important;
+    }
+    .showSub {
+        display: none;
+    }
+}
 
+@media (max-width: 992px) { 
+    .showMain {
+        display: none;
+    }
+    .showSub {
+        display: unset !important;
+    }
+}
 </style>

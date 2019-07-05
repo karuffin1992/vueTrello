@@ -1,12 +1,20 @@
 <template>
   <div class="board-header">
-
+    <b-navbar type="dark" variant="dark">
+      <b-navbar-nav>
+        <b-nav-item href="#">{{ title }}</b-nav-item>
+      </b-navbar-nav>
+    </b-navbar>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'BoardHeader'
+  name: 'BoardHeader',
+  props: {
+    title: String,
+    users: Array
+  }
 }
 </script>
 
