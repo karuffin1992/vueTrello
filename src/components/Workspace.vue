@@ -1,6 +1,6 @@
 <template>
   <div class="board-main-content">
-    <BoardHeader />
+    <BoardHeader v-bind="workspace" />
     <BoardCanvas />
   </div>
 </template>
@@ -11,6 +11,14 @@ import BoardHeader from './BoardHeader.vue'
 
 export default {
   name: 'Workspace',
+  data() {
+    return {
+      workspace: {
+        title: 'Production Workflow',
+        users: ['Kevin Ruffin', 'Mikey Davidson', 'Paul Liebgott']
+      }
+    }
+  },
   components: {
     BoardCanvas,
     BoardHeader

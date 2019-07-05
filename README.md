@@ -1,4 +1,7 @@
 # vue-trello
+```
+Creating a Trello board clone using Vue.js and Bootstrap-with-Vue
+```
 
 ## Project setup
 ```
@@ -9,5 +12,3 @@ npm install
 ```
 npm run serve
 ```
-
-Creating a Trello board clone using Vue.js

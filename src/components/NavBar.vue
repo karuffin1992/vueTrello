@@ -30,7 +30,7 @@
                     <template slot="button-content">
                         <b-button pill>{{ getInitials }}</b-button>
                     </template>
-                    <b-dropdown-item href="#">{{ getFullName }} (@{{ user.username }})</b-dropdown-item>    
+                    <b-dropdown-item href="#">{{ getFullName }} (@{{ username }})</b-dropdown-item>    
                     <b-dropdown-divider></b-dropdown-divider>                
                     <b-dropdown-item href="#">Profile</b-dropdown-item>                    
                     <b-dropdown-item href="#">Cards</b-dropdown-item>                    
@@ -51,23 +51,19 @@
 <script>
 export default {
   name: 'NavBar',
-  data() {
-    return {
-        user: {
-            username: 'kevinruffin1992',
-            firstName: 'Kevin',
-            lastName: 'Ruffin'
-        }   
-    }          
+  props: {
+        firstName: String,
+        lastName: String,
+        username: String
   },
   computed: {
     getFullName: function() {
-        return this.user.firstName + ' ' + this.user.lastName;
+        return `${this.firstName} ${this.lastName}`                 
     },
     getInitials: function() {
-        return this.user.firstName.charAt(0).toUpperCase() + this.user.lastName.charAt(0).toUpperCase();
+        return this.firstName.charAt(0).toUpperCase() + this.lastName.charAt(0).toUpperCase() 
     }
-  }
+  }  
 }
 </script>
 
