@@ -1,14 +1,14 @@
 <template>
-    <div class="board-canvas">
+    <div class="board-list">
 
     </div>
 </template>
 
 <script>
-import BoardList from './BoardList.vue'
+import BoardCard from './BoardCard.vue'
 
 export default {
-  name: 'BoardCanvas'
+  name: 'BoardList'
 }
 </script>
 
