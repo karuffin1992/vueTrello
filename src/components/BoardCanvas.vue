@@ -1,6 +1,6 @@
 <template>
     <div class="board-canvas">
-
+      <BoardList />
     </div>
 </template>
 
@@ -8,7 +8,10 @@
 import BoardList from './BoardList.vue'
 
 export default {
-  name: 'BoardCanvas'
+  name: 'BoardCanvas',
+  components: {
+    BoardList
+  }
 }
 </script>
 

@@ -11,6 +11,10 @@ import Workspace from './components/Workspace.vue'
 
 export default {
   name: 'app',
+  components: {
+    NavBar,
+    Workspace
+  },
   data() {
     return {
       currentUser: {
@@ -19,10 +23,6 @@ export default {
         lastName: 'Ruffin'
       }       
     }
-  },
-  components: {
-    NavBar,
-    Workspace
   }
 }
 </script>
